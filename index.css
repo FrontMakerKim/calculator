@@ -1,0 +1,35 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.display,
+.result {
+  text-align: right;
+}
+
+table,
+tr,
+td {
+  border: 1px solid black;
+  width: 300px;
+  height: 50px;
+  border-radius: 3px;
+}
+
+table {
+  background-color: #ebf5ff;
+}
+
+td {
+  background-color: white;
+  text-align: center;
+  margin: 10px;
+}
+
+/* * {
+  margin: 10px;
+} */
