@@ -12,41 +12,46 @@
   <body>
     <div class="container">
       <table border="1">
-        <tr>
-          <td colspan="4" class="display">diplay</td>
-        </tr>
-        <tr>
-          <td colspan="4" class="result">result</td>
-        </tr>
-        <tr>
-          <td>CE</td>
-          <td>C</td>
-          <td colspan="2"><</td>
-        </tr>
-        <tr>
-          <td>7</td>
-          <td>8</td>
-          <td>9</td>
-          <td>/</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>5</td>
-          <td>6</td>
-          <td>x</td>
-        </tr>
-        <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-          <td>-</td>
-        </tr>
-        <tr>
-          <td>.</td>
-          <td>0</td>
-          <td>=</td>
-          <td>+</td>
-        </tr>
+        <div class="screen">
+          <tr>
+            <td colspan="4" class="display"></td>
+          </tr>
+          <tr>
+            <td colspan="4" class="result">0</td>
+          </tr>
+        </div>
+        <div class="content">
+          <tr>
+            <td onclick="CE()" class="symbol">CE</td>
+            <td class="symbol">C</td>
+            <td colspan="2" onclick="back()" class="symbol"><</td>
+          </tr>
+          <tr>
+            <td onclick="add(7)" class="number">7</td>
+            <td onclick="add(8)" class="number">8</td>
+            <td onclick="add(9)" class="number">9</td>
+            <td onclick="calc('/')" class="symbol">/</td>
+          </tr>
+          <tr>
+            <td onclick="add(4)" class="number">4</td>
+            <td onclick="add(5)" class="number">5</td>
+            <td onclick="add(6)" class="number">6</td>
+            <td onclick="calc('*')" class="symbol">x</td>
+          </tr>
+          <tr>
+            <td onclick="add(1)" class="number">1</td>
+            <td onclick="add(2)" class="number">2</td>
+            <td onclick="add(3)" class="number">3</td>
+            <td onclick="calc('-')" class="symbol">-</td>
+          </tr>
+          <tr>
+            <td onclick="point()" class="number">.</td>
+            <td onclick="add(0)" class="number">0</td>
+            <td onclick="equal()" class="symbol">=</td>
+            <td onclick="calc('+')" class="symbol">+</td>
+          </tr>
+        </div>
+        
     </div>
     
     </table>
