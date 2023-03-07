@@ -21,8 +21,12 @@ td {
   border-radius: 3px;
 }
 
-.content table {
-  background-color: #f3faff;
+table {
+  background-color: #fff9f9;
+}
+
+table:focus-within {
+  background-color: red;
 }
 
 td {
@@ -30,7 +34,15 @@ td {
   margin: 10px;
 }
 
+.number {
+  background-color: white;
+}
+
 .number:hover {
+  background-color: #fff9f9;
+}
+
+.symbol {
   background-color: #fff9f9;
 }
 
@@ -38,6 +50,11 @@ td {
   background-color: #f3faff;
 }
 
-.symbol {
-  background-color: #fff9f9;
+.equal {
+  background-color: #3d75ca;
+  color: white;
+}
+
+.equal:hover {
+  background-color: #4b8ae8;
 }
