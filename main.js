@@ -1,6 +1,9 @@
 const $display = document.querySelector(".display");
 const $result = document.querySelector(".result");
 
+let o;
+let c;
+let i = -1;
 //연산기호
 function calc(value) {
   const displayValue = $display.textContent;
@@ -62,16 +65,22 @@ function calc(value) {
       $display.textContent += "/";
       break;
   }
-
-  return 1;
+  o = $display.textContent;
+  c = value;
+  i++;
 }
-
-let c = "";
-let i = 1;
+let list = [];
+let list1 = [];
 //display
 function add(value) {
-  // const answer = calc();
-  // console.log(answer);
+  if (o !== undefined) {
+    o = o.slice(0, $display.textContent.length - 1);
+    list[i] = o;
+  }
+  if (c !== undefined) {
+    list1[i] = c;
+  }
+  let b = $result.textContent;
 
   if ($result.textContent === "0") {
     $result.textContent = value;
@@ -80,67 +89,78 @@ function add(value) {
       $display.textContent = "";
       $result.textContent = "";
     } else if ($display.textContent[$display.textContent.length - 1] === "+") {
-      let a = $result.textContent;
-      let b = "";
-      if ($display.textContent === $result.textContent) {
-        $result.textContent = "";
+      if ($display.textContent.split("+")[0] === $result.textContent) {
+        $result.textContent = value;
       } else {
-        c += value;
-        console.log(c);
-        if (c.length === i) {
-          $result.textContent = "";
-        }
         $result.textContent += value;
-        i++;
-        console(i);
+      }
+
+      if (list1[i - 1] !== undefined && list[i - 1] !== undefined) {
+        if (list1[i - 1] === "x") {
+          list1[i - 1] = "*";
+        }
+        if (
+          eval(`${b} ${list1[i - 1]} ${list[i - 1]}`) ===
+          Number($display.textContent.slice(0, $display.textContent.length - 1))
+        ) {
+          $result.textContent = value;
+        }
       }
     } else if ($display.textContent[$display.textContent.length - 1] === "-") {
-      let a = $result.textContent;
-      let b = "";
-      if ($display.textContent === $result.textContent) {
-        $result.textContent = "";
+      if ($display.textContent.split("-")[0] === $result.textContent) {
+        $result.textContent = value;
       } else {
-        c += value;
-        console.log(c);
-        if (c.length === i) {
-          $result.textContent = "";
-        }
         $result.textContent += value;
-        i++;
-        console(i);
+      }
+
+      if (list1[i - 1] !== undefined && list[i - 1] !== undefined) {
+        if (list1[i - 1] === "x") {
+          list1[i - 1] = "*";
+        }
+        if (
+          eval(`${b} ${list1[i - 1]} ${list[i - 1]}`) ===
+          Number($display.textContent.slice(0, $display.textContent.length - 1))
+        ) {
+          $result.textContent = value;
+        }
       }
     } else if ($display.textContent[$display.textContent.length - 1] === "x") {
-      let a = $result.textContent;
-      let b = "";
-      if ($display.textContent === $result.textContent) {
-        $result.textContent = "";
+      if ($display.textContent.split("x")[0] === $result.textContent) {
+        $result.textContent = value;
       } else {
-        c += value;
-        console.log(c);
-        if (c.length === i) {
-          $result.textContent = "";
-        }
         $result.textContent += value;
-        i++;
-        console(i);
+      }
+
+      if (list1[i - 1] !== undefined && list[i - 1] !== undefined) {
+        if (list1[i - 1] === "x") {
+          list1[i - 1] = "*";
+        }
+        if (
+          eval(`${b} ${list1[i - 1]} ${list[i - 1]}`) ===
+          Number($display.textContent.slice(0, $display.textContent.length - 1))
+        ) {
+          $result.textContent = value;
+        }
       }
     } else if ($display.textContent[$display.textContent.length - 1] === "/") {
-      let a = $result.textContent;
-      let b = "";
-      if ($display.textContent === $result.textContent) {
-        $result.textContent = "";
+      if ($display.textContent.split("/")[0] === $result.textContent) {
+        $result.textContent = value;
       } else {
-        c += value;
-        console.log(c);
-        if (c.length === i) {
-          $result.textContent = "";
-        }
         $result.textContent += value;
-        i++;
-        console(i);
+      }
+
+      if (list1[i - 1] !== undefined && list[i - 1] !== undefined) {
+        if (list1[i - 1] === "x") {
+          list1[i - 1] = "*";
+        }
+        if (
+          eval(`${b} ${list1[i - 1]} ${list[i - 1]}`) ===
+          Number($display.textContent.slice(0, $display.textContent.length - 1))
+        ) {
+          $result.textContent = value;
+        }
       }
     } else {
-      console.log($result.textContent);
       $result.textContent += value;
     }
   }
