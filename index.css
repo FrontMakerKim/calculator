@@ -25,8 +25,8 @@ table {
   background-color: #fff9f9;
 }
 
-table:focus-within {
-  background-color: red;
+table:hover {
+  background-color: #f3faff;
 }
 
 td {
